@@ -1,3 +1,3 @@
 const dev = process.env.NODE_ENV !== 'production';
 
-export const server = dev ? 'https://json-server-jgwwg94vz-sivqa.vercel.app' : 'https://json-server-jgwwg94vz-sivqa.vercel.app';
+export const server = dev ? 'http://localhost:3001' : 'https://json-server-sable.vercel.app';
