@@ -60,13 +60,13 @@ const ProductsFilter = ({ setFilterData, filterData }: FilterPropsType) => {
                 label={type.label}
                 checked={filterData.sizes.includes(type.label.toLowerCase())}
                 onChange={(e) => {
-                  console.log(filterData)
                   if (e.target.checked)
                     setFilterData({ ...filterData, sizes: [...filterData.sizes, type.label.toLowerCase()] })
                   else
 
                     setFilterData({ ...filterData, sizes: [...filterData.sizes].filter(x => x !== type.label.toLowerCase()) })
-                }} />
+                }}
+              />
             ))}
           </div>
         </div>

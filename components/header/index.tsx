@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
-import useOnClickOutside from 'use-onclickoutside';
 import Logo from '../../assets/icons/logo';
 import Link from 'next/link';
 import { RootState } from 'store';
@@ -13,9 +12,7 @@ const Header = ({ isErrorPage }: HeaderType) => {
   const { cartItems } = useSelector((state: RootState)  => state.cart);
 
   const [onTop, setOnTop] = useState(( isErrorPage ) ? false : true);
-  const [searchOpen, setSearchOpen] = useState(false);
   const navRef = useRef(null);
-  const searchRef = useRef(null);
 
   const headerClass = () => {
     if(window.pageYOffset === 0) {
@@ -35,13 +32,6 @@ const Header = ({ isErrorPage }: HeaderType) => {
       headerClass();
     };
   }, []);
-
-  const closeSearch = () => {
-    setSearchOpen(false);
-  }
-
-  // on click outside
-  useOnClickOutside(searchRef, closeSearch);
 
   return(
     <header className={`site-header ${!onTop ? 'site-header--fixed' : ''}`}>

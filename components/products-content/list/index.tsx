@@ -25,7 +25,7 @@ const ProductsContent = ({products}: ProductsPropsType) => {
               color={item.color}
               currentPrice={item.currentPrice}
               key={item.id}
-              images={item.images} 
+              images={item.images}
               rating={item.rating}
             />
           ))}
